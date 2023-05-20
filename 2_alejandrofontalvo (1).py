@@ -1,32 +1,32 @@
 import unittest
-class Personal:
+class Personal: #Esta clase representa el personal que trabaja en la recolección de residuos. 
   def __init__(self) -> None: #Esta clase nos permite recoger los datos de nuestro 
     self.NombresEmpleados = []
     self.EdadEmpleados = []
     self.IDEmpleados = []
 
-  def Registrar_empleado(self,camion,Empresa):
+  def Registrar_empleado(self,camion,Empresa): #registra los datos de los conductores y acompañantes de un camión.
     i = 0
     print("           Recuerda Agregar al Conductor y los dos Ayudantes            ")
     for i in range(3):
      if(i == 0):
       print("-----------------------------------------------------------------------")
-      c = input(f"Digita el ID del Conductor del camion con ID {camion.ID_Camion} = ")
-      while not c.isdigit():  # Verifica si el valor ingresado es un número entero
+      c = input(f"Digita el ID del Conductor del camion con ID {camion.ID_Camion} = ") # Digita el ID del conductor
+      while not c.isdigit():  # Verifica si el valor ingresado es un número entero # Validación de que sea un entero lo digitado
                 c = input("ID inválida. Por favor, ingresa un ID entero = ")
       print("-----------------------------------------------------------------------")
-      n = input(f"Digita el Nombre del Conductor del camion con ID {camion.ID_Camion} = ")
+      n = input(f"Digita el Nombre del Conductor del camion con ID {camion.ID_Camion} = ")# Digita el nombre del conductor
       print("-----------------------------------------------------------------------")
-      E = input(f"Digita la Edad del Conductor del camion con ID {camion.ID_Camion} = ")
-      while not E.isdigit():  # Verifica si el valor ingresado es un número entero
+      E = input(f"Digita la Edad del Conductor del camion con ID {camion.ID_Camion} = ") # Digita la edad del conductor
+      while not E.isdigit():  # Verifica si el valor ingresado es un número entero # Validación de que sea un entero lo digitado
                 E = input("Edad inválida. Por favor, ingresa un número entero = ")
       print("-----------------------------------------------------------------------")
-      Empresa.Lista_Conductor.append(c)
-      self.NombresEmpleados.append(n)
-      self.EdadEmpleados.append(E)
-      self.IDEmpleados.append(c)
+      Empresa.Lista_Conductor.append(c) #Se agrega a una lista que está en la clase TrashCity
+      self.NombresEmpleados.append(n) #Se guarda copia en lista Nombres de personal del Camión
+      self.EdadEmpleados.append(E) #Se guarda copia en lista Edades de Personal del Camión
+      self.IDEmpleados.append(c) #Se guarda copia en lista ID de personal del Camión
      elif (i == 1):
-      d = input(f"Digita el ID del Acompañante #1 del camion con ID {camion.ID_Camion} = ")
+      d = input(f"Digita el ID del Acompañante #1 del camion con ID {camion.ID_Camion} = ") #Mismo Proceso Acompañante - 1
       while not d.isdigit():  # Verifica si el valor ingresado es un número entero
                 d = input("ID inválida. Por favor, ingresa un ID entero = ")
       print("-----------------------------------------------------------------------")
@@ -41,7 +41,7 @@ class Personal:
       self.EdadEmpleados.append(E1)
       self.IDEmpleados.append(d)
      elif (i == 2):
-      e = input(f"Digita el ID del Acompañante #2 del camion con ID {camion.ID_Camion} = ")
+      e = input(f"Digita el ID del Acompañante #2 del camion con ID {camion.ID_Camion} = ") #Mismo Proceso Acompañante - 2
       while not e.isdigit():  # Verifica si el valor ingresado es un número entero
                 e = input("ID inválida. Por favor, ingresa un ID entero = ")
       print("-----------------------------------------------------------------------")
@@ -57,41 +57,43 @@ class Personal:
       self.IDEmpleados.append(e)
 
 
-class Camiones: 
+class Camiones: #Esta clase representa los camiones de recolección de residuos
     def __init__(self, Modelo_Camion: str, ID_Camion: str) -> None:
      self.Nombre = Modelo_Camion
      self.ID_Camion = ID_Camion
      self.estrategia_recoleccion = None
 
-    def Crear_Camion(self,Empresa,camion)-> None:
+    def Crear_Camion(self,Empresa,camion)-> None: #Creación del Camión
       Empresa.Lista_Camiones.append(self.ID_Camion)
       b = Personal()
-      b.Registrar_empleado(camion,Empresa)
+      b.Registrar_empleado(camion,Empresa) #Junto con el registro de empleados
 
-    def establecer_estrategia_recoleccion(self, estrategia_recoleccion):
+    def establecer_estrategia_recoleccion(self, estrategia_recoleccion): # Realiza la estrategia establecida.
         self.estrategia_recoleccion = estrategia_recoleccion
 
-    def realizar_recoleccion(self, residuos,Empresa, Geo):
+    def realizar_recoleccion(self, residuos,Empresa, Geo): # Realiza la recolección de residuos utilizando la estrategia establecida.
         if self.estrategia_recoleccion:
             self.estrategia_recoleccion.realizar_recoleccion(residuos,Empresa,Geo)
         else:
             print("No se ha establecido una estrategia de recolección")
      
 
-class TrashCity:
+class TrashCity: # Esta clase es una implementación del patrón de diseño Singleton 
+                 # Tiene métodos para contar y mostrar los residuos recogidos, 
+                 # así como para mantener listas de conductores, acompañantes y camiones.
     __instance = None
 
     @staticmethod
-    def getInstance():
+    def getInstance(): # Singleton
         if TrashCity.__instance is None:
             TrashCity()
         return TrashCity.__instance
     
     def __init__(self):
-      if TrashCity.__instance is not None:
+      if TrashCity.__instance is not None: # Validación
             raise Exception("This class is a Singleton!")
       else:
-       self.Lista_Conductor = []
+       self.Lista_Conductor = []. #Atributos
        self.Lista_Acompañantes = []
        self.Lista_Camiones = []
        self.ResiduosV = [0]
@@ -101,13 +103,13 @@ class TrashCity:
        self.TotalPR = 0
        self.TotalMR = 0
     
-    def Mostrar_Empleados(self):
+    def Mostrar_Empleados(self): # Método para mostrar Conductor
       for cadena in self.Lista_Conductor:
         print("------------------------")
         print("ID de los Conductores: ", cadena)
         print("------------------------")
 
-    def Mostrar_Camion(self):
+    def Mostrar_Camion(self): # Método para mostrar referencia camión
       for cadena in self.Lista_Camiones:
         print("------------------------")
         print("ID del camión: ", cadena)
@@ -115,19 +117,19 @@ class TrashCity:
 
 
 
-    def Contar_Residuos_Vidrio_Total(self,Geolocalizacion):
-      if Geolocalizacion.Turno == True:
-        for cadena in self.ResiduosV:
-         self.TotalVR = self.TotalVR + cadena
+    def Contar_Residuos_Vidrio_Total(self,Geolocalizacion): #Contabilización de residuos de vidrios
+      if Geolocalizacion.Turno == True: # Turno Activo
+        for cadena in self.ResiduosV: #Se toman todos los valores de los residuos recolectados
+         self.TotalVR = self.TotalVR + cadena #Se suman
       else:
         print("NO HA TERMINADO EL TURNO")
-      self.ResiduosV.append(self.TotalVR)
+      self.ResiduosV.append(self.TotalVR) #Se agrega a una lista
       print("//////////////////////////////////////////////////////////////") 
       print("             TOTAL             ")
-      print("El total de residuos recogidos en el día ", Geolocalizacion.Dia ," es:", self.TotalVR, " Residuos de Vidrio" )
+      print("El total de residuos recogidos en el día ", Geolocalizacion.Dia ," es:", self.TotalVR, " Residuos de Vidrio" ) #Se muestran los residuos totales
       print("//////////////////////////////////////////////////////////////")
 
-    def Contar_Residuos_Papel_Total(self,Geolocalizacion):
+    def Contar_Residuos_Papel_Total(self,Geolocalizacion): #Contabilización de residuos de Papel
       if Geolocalizacion.Turno == True:
         for cadena in self.ResiduosP:
          self.TotalPR = self.TotalPR + cadena
@@ -139,7 +141,7 @@ class TrashCity:
       print("El total de residuos recogidos en el día ", Geolocalizacion.Dia ," es:", self.TotalPR, " Residuos de papel" )
       print("//////////////////////////////////////////////////////////////")
      
-    def Contar_Residuos_Metal_Total(self,Geolocalizacion):
+    def Contar_Residuos_Metal_Total(self,Geolocalizacion): #Contabilización de residuos de Metal
       if Geolocalizacion.Turno == True:
         for cadena in self.ResiduosM:
          self.TotalMR = self.TotalMR + cadena
@@ -151,23 +153,23 @@ class TrashCity:
       print("El total de residuos recogidos en el día ", Geolocalizacion.Dia ," es:", self.TotalMR, " Residuos de Metal" )
       print("//////////////////////////////////////////////////////////////")
 
-class Geolocalizacion:
+class Geolocalizacion: #Esta clase representa la ubicación geográfica de un punto de recolección de residuos.
    def __init__(self,Latitud, Longitud,Dia):
      self.Turno = False
      self.Latitud = Latitud
      self.Longitud = Longitud
      self.Dia = Dia
     
-   def Acabar_turno(self):
+   def Acabar_turno(self): #Sirve para detener el turno e ir a descansar
       self.Turno = True
       print("//////////////////")
       print("Hora de descansar") 
       print("//////////////////")
 
 class EstrategiaRecoleccion:
-    def realizar_recoleccion(self, residuos,Empresa,Geo):
+    def realizar_recoleccion(self, residuos,Empresa,Geo): # El método realizar_recoleccion que implementa la estrategia específica de recolección.
         pass
-
+# Estas clases representan diferentes estrategias de recolección de residuos (por ejemplo, vidrio, papel,
 class EstrategiaRecoleccionVidrio(EstrategiaRecoleccion):
     
     def realizar_recoleccion(self,ResiduosV,Empresa,Geo):
@@ -198,7 +200,7 @@ class EstrategiaRecoleccionMetal(EstrategiaRecoleccion):
       print("/////////////////////////////////////////////////////////////////////////////////////////")
       Empresa.ResiduosM.append(ResiduosM) 
 
-class TrashCityTests(unittest.TestCase):
+class TrashCityTests(unittest.TestCase): #Esta clase define pruebas unitarias utilizando el módulo unittest para verificar el funcionamiento correcto de algunos métodos de la clase
 
     def test_Contar_Residuos_Vidrio_Total(self):
         TC = TrashCity()
