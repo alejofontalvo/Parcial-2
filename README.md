@@ -28,6 +28,8 @@ Este manual de usuario proporciona una guía detallada sobre cómo utilizar el S
 
 2. Inicia Programa:
    - Cuando se te pida debes presionar la opción 1. Si, 2. No, para iniciar el programa.
+   - ![image](https://github.com/alejofontalvo/Parcial-2/assets/102882477/43fc5ca0-e06e-4b11-a7ad-71ef448b0d5c)
+
 
 3. Crear camiones de recolección: 
    - Cuando se te solicite, ingresa el modelo y el ID del camión que deseas crear.
@@ -59,8 +61,11 @@ Este manual de usuario proporciona una guía detallada sobre cómo utilizar el S
 
 ## Validaciones
  - Se implementaron valiaciones para que el usuario no me digite en el ID o en la edad un valor diferente a un entero.
+ ![image](https://github.com/alejofontalvo/Parcial-2/assets/102882477/a729382a-e2ca-4827-b4a9-e14c34bae6de)
  - El Singleton se validó para que su estructura fuera completamente eficiente.
+ - ![image](https://github.com/alejofontalvo/Parcial-2/assets/102882477/ba9475a5-b712-44b4-9e54-0874a3a04a1e)
  - Las opciones del usuario tambien cuentan con validación.
+ - ![image](https://github.com/alejofontalvo/Parcial-2/assets/102882477/64e154d0-f729-4d64-8b3c-27f91fe33e8c)
 
 ## Planteamiento del UML para la lógica
 ![image](https://github.com/alejofontalvo/Parcial-2/assets/102882477/e3164e8f-3e7f-4af7-9ec3-ae497cfe14db)
