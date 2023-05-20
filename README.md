@@ -23,6 +23,8 @@ Este manual de usuario proporciona una guía detallada sobre cómo utilizar el S
    ```
    python main.py
    ```
+   ![image](https://github.com/alejofontalvo/Parcial-2/assets/102882477/d3bcccd9-0cee-4855-be30-f0b3daec55b8)
+
 
 2. Inicia Programa:
    - Cuando se te pida debes presionar la opción 1. Si, 2. No, para iniciar el programa.
@@ -54,6 +56,11 @@ Este manual de usuario proporciona una guía detallada sobre cómo utilizar el S
 ## Visualización de Datos
 - El ID de los empleados será registrado y se podrá observar de manera clara.
 - No olvides visualizar cada uno de los componentes que la consola despliega.
+
+## Validaciones
+ - Se implementaron valiaciones para que el usuario no me digite en el ID o en la edad un valor diferente a un entero.
+ - El Singleton se validó para que su estructura fuera completamente eficiente.
+ - Las opciones del usuario tambien cuentan con validación.
 
 ## Planteamiento del UML para la lógica
 ![image](https://github.com/alejofontalvo/Parcial-2/assets/102882477/e3164e8f-3e7f-4af7-9ec3-ae497cfe14db)
