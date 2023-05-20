@@ -56,7 +56,7 @@ Este manual de usuario proporciona una guía detallada sobre cómo utilizar el S
 - No olvides visualizar cada uno de los componentes que la consola despliega.
 
 ## Planteamiento del UML para la lógica
-![image](https://github.com/alejofontalvo/Parcial-2/assets/102882477/118a5ce8-126f-43fb-9fa0-a41a018820f5)
+![image](https://github.com/alejofontalvo/Parcial-2/assets/102882477/e3164e8f-3e7f-4af7-9ec3-ae497cfe14db)
 
 ## Recuento Total de Residuos
 
