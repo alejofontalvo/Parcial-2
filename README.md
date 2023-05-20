@@ -1,19 +1,20 @@
 # Parcial-2
 Ejercicio de Recolección y Acopio - Parcial #2
-Claro, aquí tienes un ejemplo de cómo podría ser el manual de usuario en un archivo README:
 
-# Manual de Usuario - Sistema de Gestión de Residuos
+# Manual de Usuario - Sistema de Gestión de Recolección y acopio de Residuos.
 
-Este manual de usuario proporciona una guía detallada sobre cómo utilizar el Sistema de Gestión de Residuos. El sistema permite registrar empleados, crear camiones de recolección y realizar la recolección de residuos.
+Este manual de usuario proporciona una guía detallada sobre cómo utilizar el Sistema de Recolección y acopio de Residuos. El sistema permite registrar empleados, crear camiones de recolección y realizar la recolección de residuos.
 
 ## Requisitos Previos
 
 - Python 3.x instalado en el sistema.
 - Conocimientos básicos de programación en Python.
+- Unittest (Prueba Unitaria)
+- Visual Studio Code (Editor de Código)
 
 ## Configuración del Entorno
 
-1. Clona o descarga el repositorio del Sistema de Gestión de Residuos.
+1. Clona o descarga el repositorio del istema de Recolección y acopio de Residuos.
 2. Abre una terminal y navega hasta el directorio raíz del proyecto.
 
 ## Pasos para Utilizar el Sistema
