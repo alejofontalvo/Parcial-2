@@ -14,7 +14,7 @@ Este manual de usuario proporciona una guía detallada sobre cómo utilizar el S
 
 ## Configuración del Entorno
 
-1. Clona o descarga el repositorio del istema de Recolección y acopio de Residuos.
+1. Clona o descarga el repositorio del Sistema de Recolección y acopio de Residuos.
 2. Abre una terminal y navega hasta el directorio raíz del proyecto.
 
 ## Pasos para Utilizar el Sistema
@@ -24,37 +24,44 @@ Este manual de usuario proporciona una guía detallada sobre cómo utilizar el S
    python main.py
    ```
 
-2. Registrar empleados:
-   - Cuando se te solicite, ingresa los datos del conductor del camión, incluyendo el ID, nombre y edad.
+2. Inicia Programa:
+   - Cuando se te pida debes presionar la opción 1. Si, 2. No, para iniciar el programa.
+
+3. Crear camiones de recolección: 
+   - Cuando se te solicite, ingresa el modelo y el ID del camión que deseas crear.
+   - Se te pedirá que registres los empleados asociados a ese camión, 
+   - ingresa los datos del conductor del camión, incluyendo el ID, nombre y edad.
    - A continuación, ingresa los datos de los dos acompañantes del camión, también especificando su ID, nombre y edad.
    - Repite estos pasos para cada camión y sus respectivos empleados.
 
-3. Crear camiones de recolección:
-   - Cuando se te solicite, ingresa el modelo y el ID del camión que deseas crear.
-   - Se te pedirá que registres los empleados asociados a ese camión, siguiendo los pasos del paso 2.
-
-4. Establecer estrategia de recolección:
-   - Selecciona el camión al que deseas asignar una estrategia de recolección.
-   - Selecciona una opción de recolección de residuos (vidrio, papel, metal) para el camión.
-
+4. Establecer Geolocalización:
+   - Digita la Latitud, Longitud y Día de recolección.
+   
 5. Realizar recolección de residuos:
-   - Selecciona el camión al que deseas realizar la recolección de residuos.
-   - Selecciona el tipo de residuo que se va a recolectar (vidrio, papel, metal).
+   - Digita la cantidad de residuo que se va a recolectar (vidrio, papel, metal).
    - Observa el mensaje que muestra la recolección realizada en la latitud y longitud especificada.
+   - Agrega todo el residuo recolectado (vidrio, papel, metal) que el camión tomó en el día específico.
 
 6. Finalizar turno:
-   - Cuando hayas terminado de utilizar el sistema, selecciona la opción para finalizar el turno.
+   - Cuando hayas terminado de utilizar el sistema, selecciona la opción para no seguir el programa.
    - El sistema mostrará un mensaje indicando que es hora de descansar.
+   - Mostrará los residuos (vidrio, papel, metal) totales recolectados, observa el mensaje
+
+7. Cierre
+   - Despedida de la plataforma
+   - Inicio de las pruebas unitarias de funcionamiento
 
 ## Visualización de Datos
+- El ID de los empleados será registrado y se podrá observar de manera clara.
+- No olvides visualizar cada uno de los componentes que la consola despliega.
 
-- Para mostrar los empleados registrados en el sistema, selecciona la opción correspondiente en el menú principal.
-- Para mostrar los camiones registrados en el sistema, selecciona la opción correspondiente en el menú principal.
+## Planteamiento del UML para la lógica
+![image](https://github.com/alejofontalvo/Parcial-2/assets/102882477/118a5ce8-126f-43fb-9fa0-a41a018820f5)
 
 ## Recuento Total de Residuos
 
 - Para obtener el recuento total de residuos recogidos en un día específico, se deben haber finalizado los turnos de recolección.
-- Selecciona la opción de recuento total de residuos de vidrio, papel o metal.
+- Selecciona la opción de no agregar más residuos para hallar el recuento total de residuos de vidrio, papel o metal.
 - El sistema mostrará el recuento total de residuos recogidos en ese día.
 
 ## Soporte
